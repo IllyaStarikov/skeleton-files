@@ -28,6 +28,8 @@ endif
 ````
 
 ## Creating New Skeleton File(s)
-All skelton files have the same structure, with the extension determining which files are used. In the skeleton files directory, create a file called `skelton` with the extension you want.
+All skelton files have the same structure, with the extension determining which files are used. In the skeleton files directory, create a file called `skelton` with the extension you want. However, because only *some* files have particular extras, (i.e., not all C++ files have an `int main`), programs with a driving function should have skeleton files named `skeleton-main` with the appropriate extension.
 
 Advanced auto-population (i.e. the directory, filename, or date) is created by Vim command evaluation. The syntax is `[:VIM_EVAL:]COMMAND[:END_EVAL:]`. The `VIM_EVAL` and `END_EVAL` are keywords to wrap around the command you want executed. The command is placed in the `COMMAND` field. Basic commands can be found [here](https://coderwall.com/p/adv71w/basic-vim-commands-for-getting-started).
+
+Adding more functionality, like different subset of skeleton files, will require a new `autocmd BufNewFile` command in your .vimrc.
